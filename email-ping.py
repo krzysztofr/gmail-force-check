@@ -1,11 +1,12 @@
-import smtplib, time
+import smtplib
+import time
 from email.mime.text import MIMEText
 
-to_list = ('',)
-from_email = ''
+to_list = ('',)  # add recipient (your remote account) here
+from_email = ''  # email from which the e-mail is sent; must be accepted by SMTP
 
-s = smtplib.SMTP('')
-s.login('', '') # ('login', 'password')
+s = smtplib.SMTP('')  # SMTP address
+s.login('', '')  # ('smtp login', 'smtp password')
 
 msg = MIMEText('server status: OK')
 msg['Subject'] = 'Server status '+time.ctime()
