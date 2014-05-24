@@ -8,11 +8,10 @@ from_email = ''  # email from which the e-mail is sent; must be accepted by SMTP
 s = smtplib.SMTP('')  # SMTP address
 s.login('', '')  # ('smtp login', 'smtp password')
 
-msg = MIMEText('server status: OK')
-msg['Subject'] = 'Server status '+time.ctime()
-msg['From'] = from_email
-
 for to in to_list:
+    msg = MIMEText('server status: OK')
+    msg['Subject'] = 'Server status '+time.ctime()
+    msg['From'] = from_email
     msg['To'] = to
     print msg.as_string()
     s.sendmail(from_email, [to], msg.as_string())
