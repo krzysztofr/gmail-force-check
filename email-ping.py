@@ -1,3 +1,4 @@
+#!/usr/bin/python
 import smtplib
 import time
 from email.mime.text import MIMEText
@@ -5,7 +6,7 @@ from email.mime.text import MIMEText
 to_list = ('',)  # add recipient (your remote account) here
 from_email = ''  # email from which the e-mail is sent; must be accepted by SMTP
 
-s = smtplib.SMTP('')  # SMTP address
+s = smtplib.SMTP_SSL('')  # SMTP address
 s.login('', '')  # ('smtp login', 'smtp password')
 
 for to in to_list:
